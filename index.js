@@ -35,18 +35,16 @@ const loadInitialCardData = () => {
 
     const {cards} = JSON.parse(getCardData);
 
-
     // loop over those arry of task object to create HTML Card, inject it to DOM
 
     cards.map((cardObject) => {
         taskContainer.insertAdjacentHTML("beforeend", generateNewCard(cardObject));
 
+        // update our global store
         globalStore.push(cardObject);
-    
     });
 
 
-    // update our global store
 }
 const saveChanges = () => {
             
